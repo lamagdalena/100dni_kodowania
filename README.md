@@ -1,2 +1,2 @@
 # 100dni_kodowania
-Wyzwanie
+Wyzwanie w Pythonie
