@@ -176,12 +176,11 @@ def hangman7():
         elif x == 13:
             print(chr(124), ' ', chr(95) * 2, chr(124), chr(95) * 2, ' ' * 10, chr(124))
 
-
+            
 def hangman_game():
     print('Welcome to the Hangman Game!')
     hangman0()
-    word_list = ['fasola', 'kanapka', 'krzesło', 'kaloryfer', 'zegarek', 'lampion', 'schody', 'roleta', 'szminka',
-                 'kontrabas']
+    word_list = ['fasola', 'kanapka', 'krzesło', 'kaloryfer', 'zegarek', 'lampion', 'schody', 'roleta', 'szminka', 'kontrabas']
     secret_word = random.choice(word_list)
     guesses = 0
     number_of_mistakes_left = 7
@@ -197,36 +196,39 @@ def hangman_game():
         your_guess = input('Guess a letter:')
         if your_guess.lower() in letters_used:
             print('You already guessed that letter!')
-            number_of_mistakes_left -= 1
+        elif your_guess.lower() not in 'qwertyuiopasdfghjklzxcvbnm':
+            print('Guess A LETTER!')
+        elif len(your_guess) != 1:
+            print('Guess ONE LETTER!')
         else:
             for index, item in enumerate(secret_word_as_list):
                 if item == your_guess:
                     secret_word_guessed[index] = your_guess
-
+                    
         if secret_word_guessed.count(your_guess) == 0:
             number_of_mistakes_left -= 1
-
+            
         if number_of_mistakes_left == 6:
-            hangman1()
+                hangman1()
         elif number_of_mistakes_left == 5:
-            hangman2()
+                hangman2()
         elif number_of_mistakes_left == 4:
-            hangman3()
+                hangman3()
         elif number_of_mistakes_left == 3:
-            hangman4()
+                hangman4()
         elif number_of_mistakes_left == 2:
-            hangman5()
+                hangman5()
         elif number_of_mistakes_left == 1:
-            hangman6()
+                hangman6()
         elif number_of_mistakes_left == 0:
-            hangman7()
-            print('You lost!')
-            print('Secret word was:', secret_word)
-            break
+                hangman7()
+                print('You lost!')
+                print('Secret word was:', secret_word)
+                break
         guesses += 1
         letters_used.append(your_guess)
         print('_____________________________________')
-        print('Secret word:', ' '.join(secret_word_guessed))
+        print('Secret word:', ' '.join(secret_word_guessed))   
         if ''.join(secret_word_guessed) == secret_word:
             print('You won!')
             break
