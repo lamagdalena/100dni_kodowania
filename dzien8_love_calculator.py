@@ -4,8 +4,8 @@ def love_calculator():
     name1 = name1.lower()
     name2 = name2.lower()
     points = 0
-    vowels = 'eyuioa'
-    consonants = 'qwrtpsdfghjklzxcvbnm'
+    vowels = 'eyuioaóęą'
+    consonants = 'qwrtpsdfghjklzxcvbnmśłżźćń'
     vowels_name1 = 0
     vowels_name2 = 0
     consonants_name1 = 0
