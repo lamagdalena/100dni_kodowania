@@ -77,7 +77,7 @@ def haiku_generator():
                                         random.choice(three_syllab_word) + ' ' + random.choice(four_syllab_word), \
                                         random.choice(one_syllab_word) + ' ' + random.choice(two_syllab_word) + ' ' + random.choice(four_syllab_word)])
     """
-    # we can presume that in every text there will by at least some one and two-syllable words
+    # we can presume that in every text there will be at least some one and two-syllable words
     one_syllab_word = random.choice(one_syllab_word)
     two_syllab_word = random.choice(two_syllab_word)
 
