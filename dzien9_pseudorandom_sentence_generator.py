@@ -10,6 +10,6 @@ def pseudorandom_sentence_generator():
     plik.close()
     with open(filename, "r") as fp:
         tekst_w_json = json.load(fp)
-    zdania = nowy_slownik2.replace('?', '. ').replace('!', '. ').split('. ')
+    zdania = tekst_w_json.replace('?', '. ').replace('!', '. ').split('. ')
     random_sentence = random.choice(zdania)
     return random_sentence
